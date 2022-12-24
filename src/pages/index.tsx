@@ -7,6 +7,7 @@ import { GetStaticProps } from "next"
 import { stripe } from "../lib/stripe"
 import Stripe from "stripe"
 import Link from "next/link"
+import Head from "next/head"
 
 interface HomeProps {
   products: {
@@ -27,6 +28,10 @@ export default function Home({products}: HomeProps) {
 
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
+
       {products?.map(product => {
         return (
           <Link key={product.id} href={`/product/${product.id}`} prefetch={false}>
