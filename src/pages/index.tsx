@@ -62,7 +62,6 @@ export const getStaticProps: GetStaticProps = async () => {
       }).format(price.unit_amount!! / 100)
     }
   })
-  //console.log(response.data);
 
   return {
     props: {
